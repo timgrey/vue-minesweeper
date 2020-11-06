@@ -384,7 +384,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .grid {
   width: fit-content;
   transform: translateX(12px)
@@ -404,7 +404,7 @@ export default {
   height: fit-content;
   width: fit-content;
   border: 3px solid grey;
-  border-radius: $border-radius-md;
+  border-radius: 2px;
   background: lightgrey;
 }
 
@@ -415,8 +415,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: $size-6 0;
-  font-size: $font-size-sm;
+  padding: 1.5rem 0;
+  font-size: 1.66rem;
 }
 
 .block {
@@ -428,9 +428,9 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-size: $font-size-md;
+  font-size: 2rem;
   cursor: pointer;
-  color: 'black';
+  color: black;
 }
 
 .hiddenBlock  {
@@ -449,18 +449,18 @@ export default {
 }
 
 .flag {
-  font-size: $size-5;
-  padding-left: $size-2;
+  font-size: 1.25rem;
+  padding-left: 0.5rem;
 }
 
 .game-over {
   color: red;
-  font-size: $size-7;
+  font-size: 2rem;
 }
 
 .game-win {
   color: green;
-  font-size: $size-7;
+  font-size: 2rem;
   display:flex;
   flex-direction: column;
   justify-content: center;
