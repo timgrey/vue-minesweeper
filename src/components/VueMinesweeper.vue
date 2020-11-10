@@ -2,7 +2,7 @@
   <div class="game-wrapper">
     <div 
       class="game-board"
-      :style="`width: ${30 * gameBoardSize + 6}px`"
+      :style="`width: ${32 * gameBoardSize}px`"
     >
       <div class="infoPanel">
         <div 
@@ -10,8 +10,7 @@
           class="game-over"
         >
           GAME OVER
-          <v-btn
-            class="ma-2"
+          <button
             color="primary"
             size="small"
             @click="chooseDifficulty"
@@ -21,32 +20,28 @@
         <div 
           v-else-if="selectingDifficulty"
         >
-          <v-btn
-            class="ma-2"
+          <button
             color="primary"
             size="small"
             @click="newGame('easy')"
             v-text="'easy'"
           />
 
-          <v-btn
-            class="ma-2"
+          <button
             color="primary"
             size="small"
             @click="newGame('normal')"
             v-text="'normal'"
           />
 
-          <v-btn
-            class="ma-2"
+          <button
             color="primary"
             size="small"
             @click="newGame('hard')"
             v-text="'hard'"
           />
 
-          <v-btn
-            class="ma-2"
+          <button
             color="primary"
             size="small"
             @click="newGame('impossible')"
@@ -63,8 +58,7 @@
           YOU WIN!!!
           <div>
             <span class="timeElapsed">{{ `Score: ${timeElapsed}` }}</span>
-            <v-btn
-              class="ma-2"
+            <button
               color="primary"
               size="small"
               @click="chooseDifficulty"
@@ -401,8 +395,8 @@ export default {
 }
 
 .game-board {
-  height: fit-content;
-  width: fit-content;
+  /* height: fit-content; */
+  /* width: fit-content; */
   border: 3px solid grey;
   border-radius: 2px;
   background: lightgrey;
