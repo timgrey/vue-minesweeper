@@ -331,31 +331,36 @@ export default {
     },
 
     revealSurroundingBlocks(x, y) {
-      //checks if on first row and if block is mine or has been revealed already
+      //checks if not on first row
       if (y > 0) {
+        //checks if block is mine or has been revealed already
         if (!this.gameBoard[y - 1][x].isVisible && !this.gameBoard[y - 1][x].isMine) {
           const click = () => this.clickBlock(x, (y - 1));
           setTimeout(click, 1);
         }
       }
 
-      //checks if block is mine or has been revealed already
+      //checks if not on first column
       if (x > 0) {
+        //checks if block is mine or has been revealed already
         if (!this.gameBoard[y][x - 1].isVisible && !this.gameBoard[y][x - 1].isMine) {
           const click = () => this.clickBlock((x - 1), y);
           setTimeout(click, 1);
         }
       }
           
+      //checks if not on last column
       if (x < this.gameBoardSize - 1) {
+        //checks if block is mine or has been revealed already
         if (!this.gameBoard[y][x + 1].isVisible && !this.gameBoard[y][x + 1].isMine) {
           const click = () => this.clickBlock((x + 1), y);
           setTimeout(click, 1);
         }
       }
 
-      //checks if on last row and checks if block is mine or has been revealed already
+      //checks if not on last row
       if (y < this.gameBoardSize - 1) {
+        //checks if block is mine or has been revealed already
         if (!this.gameBoard[y + 1][x].isVisible && !this.gameBoard[y + 1][x].isMine) {
           const click = () => this.clickBlock(x, (y + 1));
           setTimeout(click, 1);
@@ -381,7 +386,6 @@ export default {
 <style scoped>
 .grid {
   width: fit-content;
-  transform: translateX(12px)
 }
 
 .game-wrapper {
@@ -391,12 +395,10 @@ export default {
   justify-content: center;
   align-items: center;
   background: white;
-  overflow:scroll;
+  overflow: scroll;
 }
 
 .game-board {
-  /* height: fit-content; */
-  /* width: fit-content; */
   border: 3px solid grey;
   border-radius: 2px;
   background: lightgrey;
@@ -448,6 +450,7 @@ export default {
 }
 
 .game-over {
+  display: flex;
   color: red;
   font-size: 2rem;
 }
@@ -474,5 +477,10 @@ export default {
   flex-direction: row;
   flex-wrap: nowrap;
   white-space: nowrap;
+}
+
+button {
+  margin: 4px;
+  font-size: 1.25rem;
 }
 </style>
