@@ -157,7 +157,8 @@ export default {
     },
   },
   created() {
-    this.gameBoardSize = Math.floor(window.innerHeight / 45);
+    const shortestWindowSize = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight
+    this.gameBoardSize = Math.floor(shortestWindowSize / 45);
     this.generateGrid();
   },
   methods: {
@@ -196,6 +197,7 @@ export default {
       };
       this.generateGrid();
     },
+    
     mineStyle(x, y) {
       let backgroundColor;
       if (this.explodedMine.x === x && this.explodedMine.y === y) {
@@ -208,6 +210,7 @@ export default {
 
       return backgroundColor;
     },
+
     findColor(block) {
       let style = 'black';
 
@@ -245,7 +248,6 @@ export default {
         }
         this.gameBoard.push(newRow);
       }
-
       this.mapMineProximityValuesOfBlocks();
     },
 
